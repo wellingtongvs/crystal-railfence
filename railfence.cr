@@ -16,8 +16,10 @@ module RailFenceCipher
     
     # if the text size isn't divisible by key value, fill the remaining characters with a special character
     remainingSpaces = text.size % key
-    (text.size .. text.size + remainingSpaces).each do
-      text = text + "X"
+    if (remainingSpaces != 0)
+      (text.size .. text.size + remainingSpaces).each do
+        text = text + "X"
+      end
     end
 
     encryptedText = ""
