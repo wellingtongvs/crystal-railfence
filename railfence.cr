@@ -18,7 +18,7 @@ module RailFenceCipher
     remainingSpaces = text.size % key
     if (remainingSpaces != 0)
       (text.size .. text.size + remainingSpaces).each do
-        text = text + "X"
+        text = text + "`"
       end
     end
 
